@@ -5,20 +5,35 @@
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body>
 
-<div class="board">	  
-	  <div class="box" id="1" onclick="fillBoard(id)"></div>
-	  <div class="box" id="2" onclick="fillBoard(id)"></div>
-	  <div class="box" id="3" onclick="fillBoard(id)"></div>
-	  <div class="box" id="4" onclick="fillBoard(id)"></div>
-	  <div class="box" id="5" onclick="fillBoard(id)"></div>
-	  <div class="box" id="6" onclick="fillBoard(id)"></div>
-	  <div class="box" id="7" onclick="fillBoard(id)"></div>
-	  <div class="box" id="8" onclick="fillBoard(id)"></div>  
-	  <div class="box" id="9" onclick="fillBoard(id)"></div>
-</div>
+<body>	
+	<header>
+			<h1>Tic-Tac-Toe</h1>
+	</header>	
 
+	<div id="game-container">
+				
+		<aside id="turn-info">
+			<div>Player A:X</div>
+			<div>Player B:O</div>
+			<div>Player Turn:<span id="player">A</span></div>
+			<div id="reset" onclick="resetMatch()">Reset</div>
+			<div id="win-text">Winner:<div id="winner"></div></div>
+			
+		</aside>
+
+		<div class="board">	  
+			  <div class="box" id="1" onclick="fillBoard(id)"></div>
+			  <div class="box" id="2" onclick="fillBoard(id)"></div>
+			  <div class="box" id="3" onclick="fillBoard(id)"></div>
+			  <div class="box" id="4" onclick="fillBoard(id)"></div>
+			  <div class="box" id="5" onclick="fillBoard(id)"></div>
+			  <div class="box" id="6" onclick="fillBoard(id)"></div>
+			  <div class="box" id="7" onclick="fillBoard(id)"></div>
+			  <div class="box" id="8" onclick="fillBoard(id)"></div>  
+			  <div class="box" id="9" onclick="fillBoard(id)"></div>
+		</div>		
+	</div>
 <script type="text/javascript" src="./js/game.js"></script>  
 </body>
 </html>

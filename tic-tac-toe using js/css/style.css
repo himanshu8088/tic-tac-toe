@@ -1,26 +1,82 @@
-.board{
-  display: grid;
+header{
+  text-align: center;
+}
+
+h1::first-letter{
+  color: red;
+  font-size: 250%;  
+}
+#game-container{  
+  margin: 10%;
+  display: flex;  
+  align-items: stretch;
+  justify-content: center;  
+}
+
+#turn-info{
+  flex=1;       
+}
+
+.board{  
+  margin-left: 10%;
+  display: grid;   
   grid-template-columns: 100px 100px 100px; 
   grid-template-rows: 100px 100px 100px; 
   grid-gap: 5px;  
-  position: fixed;
-  top: 25%;
-  left: 25%
 }
 
-.box {
+.box {    
   background-color: #444;
   color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
   display: flex;
-  align-items: center;
+  align-items: center;  
   justify-content: center;  
-  font-family: monospace;
   font-size: 300%;
 }
 
-.box:focus{
-  
+#turn-info,.board,.box{
+  border: 1px solid black;
+  border-radius: 5px;    
+  font-family: monospace;  
+  font-size: 150%;    
+  padding: 40px;
+}
+
+#turn-info{  
+  background-color: #444;
+  color: #fff;  
+}
+
+#player{  
+  color: bisque;
+  font-weight: bold;
+  font-size: 250%;
+}
+
+#winner{
+  color: black; 
+  font-weight: bold;
+  font-size: 400%; 
+  text-align: center;
+}
+
+#win-text{
+ text-align: center;
+ padding: 30px; 
+}
+
+#reset{    
+  text-align: center;
+  color: black;
+  background-color: white ;  
+  border-radius: 5px;  
+  margin: 5px;     
+}
+
+#reset:hover{
+  background-color: bisque;  
+}
+
+#reset:active{
+  background-color: rgb(139,125,107);   
 }

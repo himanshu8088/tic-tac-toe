@@ -4,9 +4,13 @@ var _winningMove=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6
 var playerTurn=0;
 var playerCellEntry={};
 playerCellEntry[0]="X";
-playerCellEntry[1]="Y";
-var board=[];
+playerCellEntry[1]="O";
 
+var playerAlias={};
+playerAlias[0]="A";
+playerAlias[1]="B";
+
+var board=[];
 
 function fillBoard(id){
 	var index=id-1;
@@ -14,38 +18,44 @@ function fillBoard(id){
 	{		
 		board[index]=playerCellEntry[playerTurn];
 		document.getElementById(id).innerText=playerCellEntry[playerTurn];
-		if(isMatchWon==true)
-		{
-			alert("Player "+playerTurn+" Won");
-			resetBoard();
-			resetPlayer();
+		if(isMatchWonned()==true)
+		{							
+			displayWinner();		
 		}
-		playerTurn=(playerTurn+1)%2;			
+		playerTurn=(playerTurn+1)%2;	
+		displayPlayerTurn();
 	}	
 }
 
-var isMatchWon= function isWon(){
-	for(var i=0;i<8;i++){
-		if(isMatchCell(_winningMove[i]))
-			return true;	
-	}
-	
+function displayWinner(){
+		document.getElementById("winner").innerText=playerAlias[playerTurn];	
 }
 
-var isMatchedCell= function isMatch(valueArr){
-	if(board[valueArr[0]]==board[valueArr[1]] && board[valueArr[1]]==board[valueArr[2]]){
+function displayPlayerTurn(){	
+		document.getElementById("player").innerText=playerAlias[playerTurn];		
+}
+
+function isCellEmpty(index){
+	if(board[index]==undefined)
+		return true;
+	else
+		return false;
+}
+
+function isMatchWonned(){
+	for(var i=0;i<8;i++){
+		if(isWinSetMatched(_winningMove[i])==true)
+			return true;	
+	}	
+}
+
+function isWinSetMatched(winMove){
+	if((board[winMove[0]]==board[winMove[1]] && board[winMove[1]]==board[winMove[2]]) && board[winMove[0]]!=undefined){
 		return true;
 	}
 	else{
 		return false;
 	}
-}
-
-var isCellEmpty=function isEmpty(index){
-	if(board[index]==undefined)
-		return true;
-	else
-		return false;
 }
 
 function resetBoard(){
@@ -57,4 +67,11 @@ function resetBoard(){
 
 function resetPlayer(){
 	var playerTurn=0;
+	displayPlayerTurn();
+}
+
+function resetMatch(){
+	resetBoard();
+	resetPlayer();
+	document.getElementById("winner").innerText="";
 }
