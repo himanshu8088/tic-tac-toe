@@ -1,6 +1,7 @@
 
-var _winningMove=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+var winningMove=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
+var rowCount;
 var playerTurn=0;
 var turnwiseCellEntry={};
 turnwiseCellEntry[0]="X";
@@ -12,6 +13,11 @@ playerAlias[1]="B";
 
 var board=[];
 
+function constructWinningMove(){
+	rowCount=Math.sqrt(document.getElementById("matrix").childElementCount);
+
+}
+
 function fillBoard(id){
 	var index=id-1;
 	if(isCellEmpty(index)==true)
@@ -20,7 +26,6 @@ function fillBoard(id){
 			board[index]=turnwiseCellEntry[playerTurn];		
 			document.getElementById(id).innerText=turnwiseCellEntry[playerTurn];
 		}
-
 		if(isMatchWon()==true){							
 			displayWinner();
 			cellInputFlag=false;				
@@ -49,7 +54,7 @@ function isCellEmpty(index){
 
 function isMatchWon(){
 	for(var i=0;i<8;i++){
-		if(isWinSetMatched(_winningMove[i])==true)
+		if(isWinSetMatched(winningMove[i])==true)
 			return true;	
 	}	
 }

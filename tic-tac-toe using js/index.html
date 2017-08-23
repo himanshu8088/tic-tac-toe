@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
-<body>	
+<body onload="constructWinningMove()">	
 	<header class="txt-formatting0">
 			<h1>Tic-Tac-Toe</h1>
 	</header>	
@@ -21,7 +21,7 @@
 			<div id="winner" class="txt-formatting1" ></div>			
 		</aside>
 
-		<div class="board">	  
+		<div class="board" id="matrix">	  
 			  <div class="box" id="1" onclick="fillBoard(id)"></div>
 			  <div class="box" id="2" onclick="fillBoard(id)"></div>
 			  <div class="box" id="3" onclick="fillBoard(id)"></div>
