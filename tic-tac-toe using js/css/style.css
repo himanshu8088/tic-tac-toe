@@ -1,19 +1,15 @@
-header{
-  text-align: center;
-}
 
-h1::first-letter{
+header h1::first-letter{
   color: red;
   font-size: 250%;  
 }
-#game-container{  
-  margin: 10%;
-  display: flex;  
+
+.game-container{  
+  margin: 5%;    
   align-items: stretch;
-  justify-content: center;  
 }
 
-#turn-info{
+aside{
   flex=1;       
 }
 
@@ -25,16 +21,18 @@ h1::first-letter{
   grid-gap: 5px;  
 }
 
-.box {    
-  background-color: #444;
-  color: #fff;
-  display: flex;
-  align-items: center;  
-  justify-content: center;  
+.box {      
+  align-items: center;    
   font-size: 300%;
 }
 
-#turn-info,.board,.box{
+.box,.game-container{
+  display: flex;    
+  justify-content: center;
+}
+
+
+aside,.board,.box{
   border: 1px solid black;
   border-radius: 5px;    
   font-family: monospace;  
@@ -42,35 +40,31 @@ h1::first-letter{
   padding: 40px;
 }
 
-#turn-info{  
+aside,.box{  
   background-color: #444;
   color: #fff;  
 }
 
-#player{  
-  color: bisque;
-  font-weight: bold;
+.txt-formatting1{  
+  color: bisque;  
   font-size: 250%;
-}
-
-#winner{
-  color: black; 
   font-weight: bold;
-  font-size: 400%; 
+}
+
+#winner{   
+  font-size: 150%; 
   text-align: center;
 }
 
-#win-text{
- text-align: center;
- padding: 30px; 
+.txt-formatting0{
+  text-align: center;  
+  color:black;
 }
 
-#reset{    
-  text-align: center;
-  color: black;
+#reset{      
   background-color: white ;  
   border-radius: 5px;  
-  margin: 5px;     
+  margin: 30px;     
 }
 
 #reset:hover{

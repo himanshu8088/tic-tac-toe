@@ -2,10 +2,10 @@
 var _winningMove=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 var playerTurn=0;
-var playerCellEntry={};
-playerCellEntry[0]="X";
-playerCellEntry[1]="O";
-
+var turnwiseCellEntry={};
+turnwiseCellEntry[0]="X";
+turnwiseCellEntry[1]="O";
+var cellInputFlag=true;
 var playerAlias={};
 playerAlias[0]="A";
 playerAlias[1]="B";
@@ -15,20 +15,25 @@ var board=[];
 function fillBoard(id){
 	var index=id-1;
 	if(isCellEmpty(index)==true)
-	{		
-		board[index]=playerCellEntry[playerTurn];
-		document.getElementById(id).innerText=playerCellEntry[playerTurn];
-		if(isMatchWonned()==true)
-		{							
-			displayWinner();		
+	{				
+		if(cellInputFlag==true){
+			board[index]=turnwiseCellEntry[playerTurn];		
+			document.getElementById(id).innerText=turnwiseCellEntry[playerTurn];
 		}
-		playerTurn=(playerTurn+1)%2;	
-		displayPlayerTurn();
-	}	
+
+		if(isMatchWon()==true){							
+			displayWinner();
+			cellInputFlag=false;				
+		}
+		else{			
+			playerTurn=(playerTurn+1)%2;	
+			displayPlayerTurn();
+		}		
+	}		  
 }
 
 function displayWinner(){
-		document.getElementById("winner").innerText=playerAlias[playerTurn];	
+		document.getElementById("winner").innerText="Winner:"+playerAlias[playerTurn];	
 }
 
 function displayPlayerTurn(){	
@@ -42,7 +47,7 @@ function isCellEmpty(index){
 		return false;
 }
 
-function isMatchWonned(){
+function isMatchWon(){
 	for(var i=0;i<8;i++){
 		if(isWinSetMatched(_winningMove[i])==true)
 			return true;	
@@ -66,12 +71,13 @@ function resetBoard(){
 }
 
 function resetPlayer(){
-	var playerTurn=0;
+	playerTurn=0;
 	displayPlayerTurn();
 }
 
 function resetMatch(){
 	resetBoard();
 	resetPlayer();
+	cellInputFlag=true;	
 	document.getElementById("winner").innerText="";
 }
