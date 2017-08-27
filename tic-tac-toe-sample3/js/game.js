@@ -18,7 +18,7 @@ $('.box').click(function(event) {
     var boxId = $(this).attr('id')
     fillBoard(boxId);
 });
-
+$('.button').click(resetMatch);
 
 function constructWinningMove(){
 	columnCount=Math.sqrt(document.getElementById("matrix").childElementCount);	
