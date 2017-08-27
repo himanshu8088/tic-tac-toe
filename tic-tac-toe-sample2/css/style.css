@@ -1,70 +1,86 @@
-
-header h1::first-letter{
-  color: red;
-  font-size: 250%;  
+body{
+  overflow-x: hidden;
 }
 
-.game-container{  
-  margin: 5%;    
-  align-items: stretch;
+.container,.inner-container,.box,aside,.component{
+  display: flex;     
 }
 
-aside{
-  flex=1;       
+.container,.component{  
+  flex-direction:column;  
 }
 
-.board{  
-  margin-left: 10%;
-  display: grid;   
-  grid-template-columns: 100px 100px 100px; 
-  grid-template-rows: 100px 100px 100px; 
-  grid-gap: 5px;  
+.component{      
+  flex-basis: 120px;  
 }
 
-.box {      
-  align-items: center;    
-  font-size: 300%;
-}
-
-.box,.game-container{
-  display: flex;    
-  justify-content: center;
-}
-
-
-aside,.board,.box{
-  border: 1px solid black;
-  border-radius: 5px;    
-  font-family: monospace;  
-  font-size: 150%;    
-  padding: 40px;
-}
-
-aside,.box{  
-  background-color: #444;
-  color: #fff;  
-}
-
-.txt-formatting1{  
-  color: bisque;  
+.txt-formatting1,header h1::first-letter{  
+  color: bisque;      
   font-size: 250%;
   font-weight: bold;
 }
 
-#winner{   
-  font-size: 150%; 
-  text-align: center;
+.inner-container{  
+    margin-top: 5%;
+    flex-direction: column-reverse;       
 }
 
-.txt-formatting0{
+.box ,.component,.inner-container{      
+  align-items: center;    
+}
+
+.board{    
+  height: 300px;
+  display: grid;   
+  grid-template-columns: 33.33% 33.33% 33.33%; 
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  grid-gap: 5px;  
+}
+
+.component,.board{
+  width: 300px;
+}
+
+.box {          
+  font-size: 300%;
+}
+
+aside,.component{
+  justify-content: space-between;
+}
+
+aside{    
+  margin-top: 5px;
+  padding: 5px;    
+}
+
+aside,.board,.box{
+  border: 1px solid black;
+  font-family: monospace;  
+  padding: 40px;
+}
+
+aside,.box,header{  
+  background-color: #444;
+  color: #fff;  
+}
+
+.txt-formatting0,#winner{
   text-align: center;  
-  color:black;
+}
+
+#winner,aside,.board,.box{   
+  font-size: 150%;   
+}
+
+#reset,aside,.board,.box,header{
+  border-radius: 5px; 
 }
 
 #reset{      
   background-color: white ;  
-  border-radius: 5px;  
-  margin: 30px;     
+  color: black;  
+  padding:5px;  
 }
 
 #reset:hover{
@@ -73,4 +89,25 @@ aside,.box{
 
 #reset:active{
   background-color: rgb(139,125,107);   
+}
+
+@media (min-width: 768px){
+   
+   .inner-container{      
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .board{
+      margin-left:18%;             
+    }
+
+    aside{
+      width: 150px;      
+      justify-content: center;   
+      align-items: center;      
+    }    
+    .component,aside{
+      flex-direction: column;      
+    }
 }
