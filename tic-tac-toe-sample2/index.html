@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body onload="constructWinningMove()">	
+	<header class="txt-formatting0">
+			<h1>Tic-Tac-Toe</h1>
+	</header>	
+
+	<div class="game-container">
+				
+		<aside>
+			<div>Player A:X</div>
+			<div>Player B:O</div>
+			<div>Player Turn:<span id="player" class="txt-formatting1">A</span></div>
+			<div id="reset" class="txt-formatting0" onclick="resetMatch()">Reset</div>
+			<div id="winner" class="txt-formatting1" ></div>			
+		</aside>
+
+		<div class="board" id="matrix">	  
+			  <div class="box" id="1" onclick="fillBoard(id)"></div>
+			  <div class="box" id="2" onclick="fillBoard(id)"></div>
+			  <div class="box" id="3" onclick="fillBoard(id)"></div>
+			  <div class="box" id="4" onclick="fillBoard(id)"></div>
+			  <div class="box" id="5" onclick="fillBoard(id)"></div>
+			  <div class="box" id="6" onclick="fillBoard(id)"></div>
+			  <div class="box" id="7" onclick="fillBoard(id)"></div>
+			  <div class="box" id="8" onclick="fillBoard(id)"></div>  
+			  <div class="box" id="9" onclick="fillBoard(id)"></div>
+		</div>		
+	</div>
+<script type="text/javascript" src="./js/game.js"></script>  
+</body>
+</html>
