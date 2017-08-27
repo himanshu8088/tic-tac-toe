@@ -12,6 +12,14 @@ turnwiseBoxEntry[1]="O";
 playerAlias[0]="A";
 playerAlias[1]="B";
 
+
+$(document).ready(constructWinningMove());
+$('.box').click(function(event) {
+    var boxId = $(this).attr('id')
+    fillBoard(boxId);
+});
+
+
 function constructWinningMove(){
 	columnCount=Math.sqrt(document.getElementById("matrix").childElementCount);	
 	board=new Array(columnCount*columnCount);
@@ -28,6 +36,7 @@ function constructWinningMove(){
 			idMatrix[i][j]=columnCount*i+j;
 		}
 	}
+
 
 	/* 
 		8 boxs can be categorised under 4 possible box win move: 
@@ -80,7 +89,7 @@ function fillBoard(id){
 	{				
 		if(boxInputFlag==true){
 			board[index]=turnwiseBoxEntry[playerTurn];		
-			document.getElementById(id).innerText=turnwiseBoxEntry[playerTurn];
+			$("#"+id).text(turnwiseBoxEntry[playerTurn]);
 		}
 		if(isMatchWon()==true){							
 			displayWinner();
@@ -118,8 +127,8 @@ function isMatched(box){
 }
 
 function resetBoard(){
-	for(var i=1;i<=9;i++){
-		document.getElementById(i).innerText="";
+	for(var i=1;i<=columnCount*columnCount;i++){
+		$("#"+i).text("");
 	}
 	board=[];
 }
@@ -133,13 +142,14 @@ function resetMatch(){
 	resetBoard();
 	resetPlayer();
 	boxInputFlag=true;	
-	document.getElementById("winner").innerText="";
+	$("#winner").text("");	
+	$("#player").text("Player Turn:A");	
 }
 
 function displayWinner(){
-		document.getElementById("winner").innerText="Winner:"+playerAlias[playerTurn];	
+		$("#winner").text("Winner:"+playerAlias[playerTurn]);	
 }
 
 function displayPlayerTurn(){	
-		document.getElementById("player").innerText=playerAlias[playerTurn];		
+		$("#player").text("Player Turn:"+playerAlias[playerTurn]);		
 }

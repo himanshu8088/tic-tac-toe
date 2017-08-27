@@ -14,10 +14,15 @@ body{
   flex-basis: 120px;  
 }
 
-.txt-formatting1,header h1::first-letter{  
+#winner,header h1::first-letter{  
   color: bisque;      
   font-size: 250%;
   font-weight: bold;
+}
+
+#player{
+  width: 150px;
+  height: 50px;  
 }
 
 .inner-container{  
@@ -37,7 +42,7 @@ body{
   grid-gap: 5px;  
 }
 
-.component,.board{
+.component,.board,aside{
   width: 300px;
 }
 
@@ -46,12 +51,11 @@ body{
 }
 
 aside,.component{
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 
 aside{    
-  margin-top: 5px;
-  padding: 5px;    
+  margin: 5px;     
 }
 
 aside,.board,.box{
@@ -73,21 +77,22 @@ aside,.box,header{
   font-size: 150%;   
 }
 
-#reset,aside,.board,.box,header{
+.button,aside,.board,.box,header{
   border-radius: 5px; 
 }
 
-#reset{      
+.button{      
   background-color: white ;  
   color: black;  
-  padding:5px;  
+  padding:5px; 
+  margin:5px; 
 }
 
-#reset:hover{
+.button:hover{
   background-color: bisque;  
 }
 
-#reset:active{
+.button:active{
   background-color: rgb(139,125,107);   
 }
 
@@ -96,12 +101,8 @@ aside,.box,header{
    .inner-container{      
       flex-direction: row;
       align-items: stretch;
+      justify-content: space-around;
     }
-
-    .board{
-      margin-left:18%;             
-    }
-
     aside{
       width: 150px;      
       justify-content: center;   
