@@ -1,8 +1,10 @@
 # tic-tac-toe
 
 ## tic-tac-toe-sample1:
-   Using java-script simple implementation.
+   ### Task: 
+   Design tic-tac-toe using simple java-script implementation.
    
 ## tic-tac-toe-sample2:
-   Using jQuery.
+   ### Task: 
+   Convert `tic-tac-toe-sample1` into Responsive design.
       
