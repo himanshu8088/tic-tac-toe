@@ -1,0 +1,114 @@
+body{
+  overflow-x: hidden;
+}
+
+.container,.inner-container,.box,aside,.component{
+  display: flex;     
+}
+
+.container,.component{  
+  flex-direction:column;  
+}
+
+.component{      
+  flex-basis: 120px;  
+}
+
+#winner,header h1::first-letter{  
+  color: bisque;      
+  font-size: 250%;
+  font-weight: bold;
+}
+
+#player{
+  width: 150px;
+  height: 50px;  
+}
+
+.inner-container{  
+    margin-top: 5%;
+    flex-direction: column-reverse;       
+}
+
+.box ,.component,.inner-container{      
+  align-items: center;    
+}
+
+.board{    
+  height: 300px;
+  display: grid;   
+  grid-template-columns: 33.33% 33.33% 33.33%; 
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  grid-gap: 5px;  
+}
+
+.component,.board,aside{
+  width: 300px;
+}
+
+.box {          
+  font-size: 300%;
+}
+
+aside,.component{
+  justify-content: space-between;  
+}
+
+aside{    
+  margin: 5px;     
+}
+
+aside,.board,.box{
+  border: 1px solid black;
+  font-family: monospace;  
+  padding: 40px;
+}
+
+aside,.box,header{  
+  background-color: #444;
+  color: #fff;  
+}
+
+.txt-formatting0,#winner{
+  text-align: center;  
+}
+
+#winner,aside,.board,.box{   
+  font-size: 150%;   
+}
+
+.button,aside,.board,.box,header{
+  border-radius: 5px; 
+}
+
+.button{      
+  background-color: white ;  
+  color: black;  
+  padding:5px; 
+  margin:5px; 
+}
+
+.button:hover{
+  background-color: bisque;  
+}
+
+.button:active{
+  background-color: rgb(139,125,107);   
+}
+
+@media (min-width: 768px){
+   
+   .inner-container{      
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-around;
+    }
+    aside{
+      width: 150px;      
+      justify-content: center;   
+      align-items: center;      
+    }    
+    .component,aside{
+      flex-direction: column;      
+    }
+}

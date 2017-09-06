@@ -1,0 +1,113 @@
+body{
+  overflow-x: hidden;
+}
+
+.container,.inner-container,.box,aside,.component{
+  display: flex;     
+}
+
+.container,.component{  
+  flex-direction:column;  
+}
+
+.component{      
+  flex-basis: 120px;  
+}
+
+.txt-formatting1,header h1::first-letter{  
+  color: bisque;      
+  font-size: 250%;
+  font-weight: bold;
+}
+
+.inner-container{  
+    margin-top: 5%;
+    flex-direction: column-reverse;       
+}
+
+.box ,.component,.inner-container{      
+  align-items: center;    
+}
+
+.board{    
+  height: 300px;
+  display: grid;   
+  grid-template-columns: 33.33% 33.33% 33.33%; 
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  grid-gap: 5px;  
+}
+
+.component,.board{
+  width: 300px;
+}
+
+.box {          
+  font-size: 300%;
+}
+
+aside,.component{
+  justify-content: space-between;
+}
+
+aside{    
+  margin-top: 5px;
+  padding: 5px;    
+}
+
+aside,.board,.box{
+  border: 1px solid black;
+  font-family: monospace;  
+  padding: 40px;
+}
+
+aside,.box,header{  
+  background-color: #444;
+  color: #fff;  
+}
+
+.txt-formatting0,#winner{
+  text-align: center;  
+}
+
+#winner,aside,.board,.box{   
+  font-size: 150%;   
+}
+
+#reset,aside,.board,.box,header{
+  border-radius: 5px; 
+}
+
+#reset{      
+  background-color: white ;  
+  color: black;  
+  padding:5px;  
+}
+
+#reset:hover{
+  background-color: bisque;  
+}
+
+#reset:active{
+  background-color: rgb(139,125,107);   
+}
+
+@media (min-width: 768px){
+   
+   .inner-container{      
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .board{
+      margin-left:18%;             
+    }
+
+    aside{
+      width: 150px;      
+      justify-content: center;   
+      align-items: center;      
+    }    
+    .component,aside{
+      flex-direction: column;      
+    }
+}
